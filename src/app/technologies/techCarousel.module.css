@@ -1,0 +1,137 @@
+.carousel_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    justify-items: space-around;
+    align-items: center;
+    align-content: center;
+    height: 80vh;
+    position: relative;
+    z-index: 1000;
+    text-align: center;
+}
+
+.carousel {
+    height: min-content;
+    max-width: 67vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent !important;
+    width: 22vw;
+    height: 50vh;
+}
+
+.tech_card {
+    width: 22vw;
+    height: 50vh;
+    background-color: var(--color-adjacent1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 1500px) {
+    .slide, .tech_card {
+        width: 25vw;
+    }
+    .carousel {
+        max-width: 75vw;
+    }
+}
+  @media (max-width: 1300px) {
+    .slide, .tech_card {
+        width: 33vw;
+    }
+    .carousel {
+        max-width: 75vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .slide, .tech_card {
+        width: 45vw;
+    }
+    .carousel {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .slide, .tech_card {
+        width: 60vw;
+    }
+    .carousel {
+        max-width: 85vw;
+    }
+}
+@media (max-width: 550px) {
+    .slide, .tech_card {
+        width: 64vw;
+    }
+    .carousel {
+        max-width: 95vw;
+    }
+}
+@media (max-width: 500px) {
+    .slide, .tech_card {
+        width: 72vw;
+    }
+    .carousel {
+        max-width: 98vw;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        opacity: 1; /* End with opacity 1 */
+    }
+  }
+  
+  .carousel_container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hidden {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  .tech_title{
+    font-size: 3.5vw;
+    color: var(--color-text-light);
+    opacity: 0;
+    animation: fadeInAnimation 3s ease-in forwards;
+    font-family: 'Parisienne', cursive;
+    transform: translateY(50px);
+    transition: opacity .5s ease-out, transform .5s ease-out;
+    margin-bottom: 10vh;
+  }
+
+  @media (max-width: 850px) {
+.tech_title{
+    font-size: 10vw;
+}
+  }

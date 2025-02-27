@@ -3,6 +3,9 @@
 import React, { useRef } from 'react';
 import CubeWorld from './components/CubeWorld';
 import Typed from 'typed.js';
+import TechCarousel from './technologies/Technologies';
+import  ManifestSection  from './manifest/ManifestSection';
+import { ProjectSections } from './projects/projects';
 const HomePage = () => {
   const span = useRef(null);
 
@@ -26,9 +29,11 @@ const HomePage = () => {
       </div>
     </section>
     <section className='canvas-spacing'></section>
-    <section className='tecnologies-section'>
-    </section>
-  </>
+    <TechCarousel/>
+    <ManifestSection/>
+    <ProjectSections/>
+    <ManifestSection/>
+  </> 
 };
 
 export default HomePage

@@ -3,17 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/base": "^5.0.0-beta.69",
+    "@mui/system": "^6.4.3",
     "@react-three/fiber": "^9.0.0-alpha.8",
     "@types/three": "^0.172.0",
+    "framer-motion": "^12.1.0",
     "next": "15.1.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-swipeable": "^7.0.2",
+    "swiper": "^11.2.2",
     "three": "^0.172.0",
     "three-noise": "^1.1.2",
     "typed.js": "^2.1.0",
@@ -24,5 +31,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   }
 }

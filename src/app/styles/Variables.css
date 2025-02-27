@@ -5,8 +5,8 @@
     --color-primary-lighter: #3D319E;
     --color-primary-light: #2C2076;
     --color-primary-dark: #18115F;
-    --color-primary-darker: #100B49;
-    --color-primary-darkest: #000528;
+    --color-primary-darker: #1d2435;
+    --color-primary-darkest: #141824;
   
     --color-accent: #AD004C;
     --color-accent-lightest: #E04674;
@@ -38,7 +38,7 @@
     --color-gray: #999999;
     --color-gray-dark: #666666;
     --color-gray-darker: #333333;
-    --color-gray-darkest: #1A1A1A;
+    --color-gray-darkest: #363636;
     --color-gray-extra-dark: #0D0D0D;
 
     /* Escala de grises */
@@ -47,7 +47,7 @@
   --color-gray-light: #CCCCCC;
   --color-gray: #999999;
   --color-gray-dark: #666666;
-  --color-gray-darker: #333333;
+  --color-gray-darker: #1a1920;
   --color-gray-darkest: #1A1A1A;
 
   /* Fondos y texto */
@@ -67,6 +67,9 @@
   --color-text-on-adjacent1: var(--color-neutral-light); /* Texto sobre fondo de sección secundaria */
   --color-text-on-adjacent2: var(--color-neutral-light); /* Texto sobre fondo de sección terciaria */
 
+  --color-text-on-adjacent1-title: #FFFFFF; /* Texto sobre fondo de sección secundaria */
+  --color-text-on-adjacent1-subtitle: #F0F8FF;
+  --color-text-on-adjacent1-text: #D3EDEB;
     /* Variables base */
     --base-unit: 4px; /* Tamaño base de la escala */
     --base-font-size: 16px; /* Tamaño de fuente base */

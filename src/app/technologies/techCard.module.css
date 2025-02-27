@@ -1,0 +1,48 @@
+.icon{
+  align-self: center;
+  width: 60px;
+  height: 60px;
+}
+
+.icon_image{
+  width: 100%;
+  height: 100%;
+}
+
+.title{
+ justify-self: center;
+ align-self: center;
+ font-size: 3.5vh;
+ margin-bottom: 5%;
+ color: var(--color-background);
+}
+.subtitle{
+  justify-self: start;
+  align-self: flex-start;
+  font-size: 2.5vh;
+  color: var(--color-background);
+}
+.description{
+  color: var(--color-text-light);
+  font-size: 2vh;
+}
+.link{
+
+}
+
+section.cardSectionBig{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: start;
+  padding: var(--spacing-xs);
+  height: 60%;
+}
+section.cardSection{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: start;
+  padding: var(--spacing-xs);
+}

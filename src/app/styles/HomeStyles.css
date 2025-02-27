@@ -10,25 +10,22 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: var(--color-primary-darkest);
+}
   
 html{
     background-color: var(--color-gray-darkest);
 }
 .first-section{
   height: 100vh;
-  display: flex;
-  align-items: start;
-  justify-items: center;
-  align-content: center;
-  justify-content: center;
 }
 .main{
   height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-items: center;
+  justify-items: start;
   align-content: flex-start;
   justify-content: center;
   padding: var(--spacing-sm);
@@ -44,8 +41,6 @@ html{
 .main-subtitle{
   font-size: 2vw;
   color: var(--color-text-light);
-
-
 }
 .main-subtitle-span{
   color: var(--color-accent);
@@ -62,7 +57,7 @@ overflow-x: hidden !important;
 }
 .canvas-spacing {
  width: 99vw;
- height: 70vh;
+ height: 110vh;
 }
 .tecnologies-section{
   width: 99.8%;
@@ -77,4 +72,45 @@ overflow-x: hidden !important;
   }
 
 
+}
+
+
+.rounded-div{
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: var(--spacing-lg);
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+@media (max-width: 1500px) {
+  .rounded-div{
+    padding: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 950px) {
+  .main-title{
+
+    font-size: 12vw;
+
+  }
+  .main-subtitle{
+    font-size: 5vw;
+    margin-bottom: var(--spacing-xxl);
+  }
+  .main{
+    justify-content: start;
+
+  }
+  .rounded-div{
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10vw;
+  }
 }
