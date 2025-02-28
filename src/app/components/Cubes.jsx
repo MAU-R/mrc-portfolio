@@ -23,40 +23,17 @@ const Cube = ({ position, isActive, scroll, cameraPosition}) => {
       //console.log("Distancia en dx:: ",distancex)
 
 
-      if(scroll>(window.innerHeight*0.05))
+      if(scroll>(window.innerHeight*0.15))
       ref.current.position.y -= (scroll-(window.innerHeight*0.05)) * 0.0009 * Math.exp(distance/3);
 
-      ref.current.material.opacity = Math.max(1 - (scroll) * 0.0005, 0);
+      ref.current.material.opacity = Math.max(1 - (scroll) * 0.0002, 0);
       ref.current.material.transparent = true;
     
     });
-    const vertexShader= `
-    varying vec2 vUv;
-
-    void main() {
-      vUv = uv;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-    }
-  `;
-    const   fragmentShader= `
-    uniform vec3 color1;
-    uniform vec3 color2;
-  
-    varying vec2 vUv;
-    
-    void main() {
-      
-      gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
-    }
-  `;
-    const uniforms = {
-      color1: { value: new THREE.Color('#AD004C') },
-      color2: { value: new THREE.Color('#008B8B') },
-    };
     return (
       <mesh ref={ref} position={position}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="#008B8B" />
+        <meshStandardMaterial color="#3e86ae" />
       </mesh>
     );
   };

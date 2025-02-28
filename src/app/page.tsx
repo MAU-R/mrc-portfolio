@@ -1,39 +1,72 @@
 'use client'
 
-import React, { useRef } from 'react';
-import CubeWorld from './components/CubeWorld';
-import Typed from 'typed.js';
-import TechCarousel from './technologies/Technologies';
-import  ManifestSection  from './manifest/ManifestSection';
-import { ProjectSections } from './projects/projects';
-const HomePage = () => {
-  const span = useRef(null);
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-  React.useEffect(() => {
-    const typed = new Typed(span.current, {
-      strings: ['Developer','Designer', 'Programmer'],
-      typeSpeed: 150,
+import CubeWorld from './components/CubeWorld';
+import TechCarousel from './technologies/Technologies';
+import ManifestSection from './manifest/ManifestSection';
+import { ProjectSections } from './projects/projects';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+const HomePage = () => {
+  const firstSectionRef = useRef(null);
+  const techCarouselRef = useRef(null);
+
+  useEffect(() => {
+    const firstSection = firstSectionRef.current;
+    const techCarousel = techCarouselRef.current;
+
+    // Animación al hacer scroll hacia abajo desde first-section
+    ScrollTrigger.create({
+      trigger: firstSection,
+      start: 'bottom bottom',
+      onEnter: () => {
+        gsap.to(window, {
+          scrollTo: { y: window.scrollY + window.innerHeight * 3.5 },
+          duration: 1.5,
+          ease: 'power2.inOut',
+        });
+      },
     });
 
-    return () => {
-      typed.destroy();
-    };
+    // Animación al hacer scroll hacia arriba desde TechCarousel
+    ScrollTrigger.create({
+      trigger: techCarousel,
+      start: 'top top',
+      onEnterBack: () => {
+        gsap.to(window, {
+          scrollTo: { y: window.scrollY - window.innerHeight * 3.5 },
+          duration: 1.5,
+          ease: 'power2.inOut',
+        });
+      },
+    });
   }, []);
 
-  return <>
-    <CubeWorld/>
-    <section className='first-section'>
-      <div className="main">
-      <h1 className='main-title'>Mauricio Ramirez Castro</h1>
-      <h3 className='main-subtitle'>Web <span ref={span} className='main-subtitle-span'></span></h3>
-      </div>
-    </section>
-    <section className='canvas-spacing'></section>
-    <TechCarousel/>
-    <ManifestSection/>
-    <ProjectSections/>
-    <ManifestSection/>
-  </> 
+  return (
+    <>
+      <CubeWorld />
+      <section ref={firstSectionRef} className="first-section">
+        <div className="main">
+          <div className="header">
+            <h3 className="main-feat rubik-font">Desarrollo Web</h3>
+          </div>
+          <h1 className="main-title rubik-font">Mauricio Ramirez Castro</h1>
+        </div>
+        <div className="manifest"></div>
+      </section>
+      <section className="canvas-spacing"></section>
+      <div className="techCarspace"ref={techCarouselRef}></div>
+      <TechCarousel  />
+      <ManifestSection />
+      <ProjectSections />
+      <ManifestSection />
+    </>
+  );
 };
 
-export default HomePage
+export default HomePage;
