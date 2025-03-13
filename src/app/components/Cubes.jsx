@@ -23,7 +23,7 @@ const Cube = ({ position, isActive, scroll, cameraPosition}) => {
       //console.log("Distancia en dx:: ",distancex)
 
 
-      if(scroll>(window.innerHeight*0.15))
+      if(scroll>(window.innerHeight*0.10))
       ref.current.position.y -= (scroll-(window.innerHeight*0.05)) * 0.0009 * Math.exp(distance/3);
 
       ref.current.material.opacity = Math.max(1 - (scroll) * 0.0002, 0);

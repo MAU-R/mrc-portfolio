@@ -19,9 +19,9 @@ const CubeWorld = () => {
     if (width > 900) {
       setCameraY(3.5); // PC
     } else if (width > 500) {
-      setCameraY(5.5); // Tablet
+      setCameraY(9.5); // Tablet
     } else {
-      setCameraY(7.5); // Celular
+      setCameraY(10.5); // Celular
     }
   };
 

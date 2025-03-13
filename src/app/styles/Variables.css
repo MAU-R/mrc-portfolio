@@ -53,7 +53,8 @@
     --spacing-md: calc(var(--base-unit) * 12); /* 48px */
     --spacing-lg: calc(var(--base-unit) * 16); /* 64px */
     --spacing-xl: calc(var(--base-unit) * 24); /* 96px */
-    --spacing-xxl: calc(var(--base-unit) * 32); /* 128px */
+    --spacing-xxl: calc(var(--base-unit) * 32); 
+    --spacing-xxxl: calc(var(--base-unit) * 38); /* 128px */
 
 }
 

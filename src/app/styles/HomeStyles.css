@@ -46,15 +46,9 @@ html{
   animation: fadeInAnimation 3s ease-in forwards;
 }
 
-.manifest{
-  height: 65vh;
-  width: 70vw;
-  z-index: 1000;
-  background-color: var(--primary-dark);
-  border-radius: 5%;
-}
 .main-feat{
  font-size: 3vw;
+ font-weight: 100;
 }
 
 
@@ -104,6 +98,7 @@ section, div {
 
 
 }
+
 
 
 .rounded-div{

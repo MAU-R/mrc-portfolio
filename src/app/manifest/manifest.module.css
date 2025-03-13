@@ -1,98 +1,75 @@
+.manifest{
+  height: 65vh;
+  width: 80vw;
+  z-index: 1000;
+  background-color: var(--primary-dark);
+  border-radius: 5%;
+  display: flex;
+  padding: 20px;
+  overflow: hidden;
+  max-width: 1200px;
+}
+
 .content {
-    width: 75vw;
-    height: 85vh;
+    width: 60%;
+    height: 95vh;
     background-color: var(--color-adjacent1-dark);
     border: solid 5px var(--color-adjacent1-darker);
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
-    padding: var(--spacing-sm);
-    position: absolute;
     transition: opacity 2.5s ease-out, transform 1.5s ease-out;
 }
 .image{
-    width: 40vw;
-    height: 75vh;
-    background-color: var(--color-accent-darker);
-    transform: translateX(50vw);
-    position: relative;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 2.5s ease-out, transform 1.5s ease-out;
-    .img{
-        width: 95%;
-        height: 95%;
-        border: none;
-    }
-    
+  padding: 1vw;
+  width: 40%;
+  height: 75%;
+  align-self: center;
+}
+.img{
+  width: 99%;
+  height: 99%;
+  border-radius: 10%;
+  object-fit: cover;
 }
 .statements{
-    width: 80%;
+    width: 100%;
     text-align: start;
     padding: var(--spacing-md);
-    padding-left: var(--spacing-xl);
-    padding-right: var(--spacing-xxl);
-    width: 70%;
     display: flex;
     flex-direction: column;
-    height: 70%;
+    height: 60%;
 }
 
 .title{
-    color: var(--color-gray-lightest);
-    font-size: 4vw;
+    color: var(--text-light-active);
+    font-size: 3vw;
 }
 .subtitle{
-    color: var(--color-gray-light);
-    font-size: var(--font-size-xxxl);
+    color: var(--text-dark);
+    font-size: var(--font-size-xxl);
     margin-bottom: auto;
 }
 .text{
-    color: var(--color-gray-lighter);
-    font-size: var(--font-size-xl);
+    color: var(--text-light-hover);
+    font-size: var(--font-size-large);
     text-align: justify;
 }
 
-.showDiv {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .hiddenDiv {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  .showImg {
-    opacity: 1;
-    transform: translateX(50vw);
-  }
-  
-  .hiddenImg {
-    opacity: 0;
-    transform: translateX(100vw);
-  }
-
-  .baseContainer {
-    display: flex;
-
-    padding: 8px;
-    position: relative;
-    width: 30vw;
-  }
-  
-  .cube {
-    background-color: var(--color-adjacent1-lightest);
-    border-radius: 4px;
-  }
 @media (max-width: 1500px) {
-  .content {  
-      width: 70vw;
-      height: 75vh;
-  }
   .image{
-      width: 45vw;
-      height: 45vh;
+    padding: 2vw;
+    width: 45%;
+    height: 75%;
+    align-self: center;
+  }
+  .img{
+  width: 99%;
+  height: 99%;
+
+}
+  .content {  
+      width: 55%;
+      height: 65vh;
   }
   .statements{
     padding: 0px;
@@ -100,61 +77,39 @@
   }
 }           
 @media (max-width: 950px) {
-  .content {  
-      width: 100vw;
-      height: 75vh;
-      margin-top: 8vh;
-      position: unset;
-      border-top-right-radius: 5%;
-      border-top-left-radius: 5%;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-
-  }
-  .statements{
-    text-align: start;
-    
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 60%;
-}
-.title{
-  font-size: var(--font-size-xxxl);
-}
-.subtitle{
-  font-size: var(--font-size-xl);
-  margin-bottom: auto;
-}   
-.text{
-  font-size: var(--font-size-large);
-  margin-bottom: 5vh;
-}
-  .image{
-      width: 85vw;
-      height: 40vh;
-      transform: translateX(0px);
-      transform: translateY(-12vh);
-  }
-  .showDiv {  
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .hiddenDiv {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  .showImg {
-    opacity: 1;
-    transform: translateX(0px);
-    transform: translateY(-20vh);
-  }
-  
-  .hiddenImg {
-    opacity: 0;
-    transform: translateX(100vw);
-  }
 
 } 
+
+@media (max-width: 750px) {
+  .statements{
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .image{
+    padding: 2vw;
+    width: 45%;
+    height: 75%;
+    align-self: center;
+  }
+.manifest{
+  flex-direction: column;
+  justify-content: center;
+}
+.content{
+  width: 100%;
+  margin-top: 0;
+}
+.title{
+  font-size: 4vw;
+}
+.subtitle{
+  color: var(--text-dark);
+  font-size: 3vw;
+  margin-bottom: auto;
+}
+.text{
+  font-size: 2vw;
+  text-align: justify;
+}
+}

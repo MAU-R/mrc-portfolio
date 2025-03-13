@@ -38,7 +38,7 @@ const slides = [
     subtitle: "Framework Backend de JAVA",
     description: "Experiencia desarrollando API REST y otro tipo de servicios backend usando SPRING.",
     link: "https://spring.io/",
-    image: "/img/spring-3.png",
+    image: "/img/spring.png",
   },
   {
     title: "NEXT",
@@ -52,7 +52,7 @@ const slides = [
     subtitle: "Framework basado en Vue.js que optimiza el desarrollo",
     description: "He trabajado 1 año desarrollando profesionalmente con Nuxt.js.",
     link: "https://nuxt.com/",
-    image: "/img/nuxtjs-icon.png",
+    image: "/img/nuxt.png",
   },
   {
     title: "CSS",
@@ -96,27 +96,23 @@ export default function TechCarousel() {
   return (
     <div
       ref={carouselRef}
-      className={`${techCarousel.carousel_container} ${isVisible ? techCarousel.show : techCarousel.hidden}`}
+      className={`${techCarousel.carousel_container}`}
     >
-     <h3 className={`${techCarousel.tech_title} ${isVisible ? techCarousel.show : techCarousel.hidden}`}>Tecnologias que manejo</h3>
+      <h2 className={`${techCarousel.section_title} rubik-font`}>Mi <br /> conocimiento</h2>
+     <h4 className={`${techCarousel.tech_title}`}>Tecnologías</h4>
+     <p className={techCarousel.tech_subtitle}> Con que puedo desarrollar el siguiente proyecto</p>
       <Swiper
         className={techCarousel.carousel}
         modules={[EffectCoverflow, Navigation, Pagination, Parallax]}
-        effect="coverflow"
-        grabCursor
+        grabCursor  
+        pagination={{ clickable: true }}
         freeMode
         loop
         parallax
         slidesPerView={3}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 200,
-          modifier: 1,
-        }}
       >
         {slides.map((item, index) => (
-          <SwiperSlide key={index} className={techCarousel.slide}>
+          <SwiperSlide key={index} className={techCarousel.slide} >
             <TechCard {...item} />
           </SwiperSlide>
         ))}
