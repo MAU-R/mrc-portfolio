@@ -88,8 +88,8 @@
   }
   .image{
     padding: 2vw;
-    width: 45%;
-    height: 75%;
+    width: 95%;
+    height: 45%;
     align-self: center;
   }
 .manifest{
@@ -101,7 +101,7 @@
   margin-top: 0;
 }
 .title{
-  font-size: 4vw;
+  font-size: 10vw;
 }
 .subtitle{
   color: var(--text-dark);
@@ -109,7 +109,7 @@
   margin-bottom: auto;
 }
 .text{
-  font-size: 2vw;
+  font-size: 3.2vw;
   text-align: justify;
 }
 }

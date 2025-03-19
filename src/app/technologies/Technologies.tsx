@@ -71,8 +71,23 @@ const slides = [
 ];
 
 export default function TechCarousel() {
+
   const [isVisible, setIsVisible] = useState(false);
   const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [columns, setColumns] = useState(window.innerWidth < 1000 ? 1 : 3);
+  const [spacing, setSpacing] = useState(window.innerWidth< 1000 ? 15 : 80);
+  useEffect(() => {
+    const handleResize = () => {
+      setColumns(window.innerWidth < 1000 ? 1 : 3);
+      setSpacing(window.innerWidth< 1000 ? 15 : 80);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -103,13 +118,14 @@ export default function TechCarousel() {
      <p className={techCarousel.tech_subtitle}> Con que puedo desarrollar el siguiente proyecto</p>
       <Swiper
         className={techCarousel.carousel}
-        modules={[EffectCoverflow, Navigation, Pagination, Parallax]}
+        modules={[ Navigation, Pagination, Parallax]}
         grabCursor  
         pagination={{ clickable: true }}
         freeMode
         loop
-        parallax
-        slidesPerView={3}
+        centeredSlides={true}
+        slidesPerView={columns}
+        spaceBetween={spacing}
       >
         {slides.map((item, index) => (
           <SwiperSlide key={index} className={techCarousel.slide} >

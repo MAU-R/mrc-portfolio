@@ -10,14 +10,16 @@
     position: relative;
     z-index: 1000;
     text-align: center;
-    padding: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    
+   width: 99vw;
 }
 
 .carousel {
     height: min-content;
-    max-width: 95vw;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -30,24 +32,40 @@
     background-color: transparent !important;
     height: 50vh;
     width: 40%;
-    margin-right: 6vw;
+
 }
 .tech_title{
     color: var(--text-normal);
-    font-size: 1.2vw;
+    font-size: 2.2vw;
+
   }
   .tech_subtitle{
-    color: var(--text-light);
-    font-size: 1.2vw;
+    color: var(--text-dark);
+    font-size: 1.8vw;
+    font-weight: 900;
   }
 .section_title{
     color: var(--accent-light);
     align-self: flex-start;
-    font-size: 2.5vw;
+    font-size: 3vw;
     text-align: start;
     margin-bottom: 4%;
+    margin-left: 3vw;
 }
   
 
-
+@media (max-width: 950px) {
+    .tech_title{
+        margin-top: 6vh;
+        font-size: 6.5vw;
+    }
+    .tech_subtitle{
+        margin-top: 1vh;
+        font-size: 4.5vw;
+        font-weight: 900;
+    }
+    .section_title{
+        font-size: 5.8vw;
+    }
+}
 
