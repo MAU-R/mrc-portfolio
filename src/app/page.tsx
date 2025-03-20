@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import CubeWorld from './components/CubeWorld';
 import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
-import { ProjectSections } from './projects/projects';
+import { ProyectSections } from './proyects/proyects';
 const HomePage = () => {
 
   return <>
@@ -26,7 +26,7 @@ const HomePage = () => {
     <section className='canvas-spacing'></section>
     <section className='canvas-fade'></section>
     <TechCarousel/>
-    <ProjectSections/>
+    <ProyectSections/>
   </> 
 };
 

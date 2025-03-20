@@ -74,14 +74,14 @@ export default function TechCarousel() {
 
   const [isVisible, setIsVisible] = useState(false);
   const carouselRef = useRef<HTMLDivElement | null>(null);
-  const [columns, setColumns] = useState(window.innerWidth < 1000 ? 1 : 3);
-  const [spacing, setSpacing] = useState(window.innerWidth< 1000 ? 15 : 80);
+  const [columns, setColumns] = useState(3);
+  const [spacing, setSpacing] = useState(80);
   useEffect(() => {
     const handleResize = () => {
       setColumns(window.innerWidth < 1000 ? 1 : 3);
       setSpacing(window.innerWidth< 1000 ? 15 : 80);
     };
-
+    handleResize()
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
