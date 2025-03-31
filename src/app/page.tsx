@@ -25,7 +25,7 @@ const HomePage = () => {
     </section>
     <section className='canvas-spacing'></section>
     <section className='canvas-fade'></section>
-    <TechCarousel/>
+    <TechCarousel/> 
     <ProyectSections/>
   </> 
 };
