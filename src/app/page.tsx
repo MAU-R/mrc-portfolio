@@ -5,6 +5,7 @@ import CubeWorld from './components/CubeWorld';
 import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
 import { ProyectSections } from './proyects/proyects';
+import GlitchText from './components/glitchText';
 const HomePage = () => {
 
   return <>
@@ -19,14 +20,15 @@ const HomePage = () => {
         <h4 className="header-link "><a href="">Contacto</a></h4>
         </div>
       </div>
-      <h1 className='main-title rubik-font'>Mauricio Ramirez Castro</h1>
+      <GlitchText text='Mauricio Ramirez Castro' extraClass='main-title rubik-font'/>
       </div>
       <ManifestSection/>
     </section>
     <section className='canvas-spacing'></section>
     <section className='canvas-fade'></section>
+    <GlitchText text="Hola Mau" extraClass='' />
     <TechCarousel/> 
-    <ProyectSections/>
+    
   </> 
 };
 
