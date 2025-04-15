@@ -1,37 +1,37 @@
-import type React from "react"
-import styles from "./glitch-text.module.css"
+// components/GlitchText.tsx
+import React from "react";
 
-export interface GlitchTextProps {
-  text: string
-  className?: string
-  tag?: keyof JSX.IntrinsicElements
-  glitchIntensity?: "light" | "medium" | "heavy"
-  glitchColor1?: string
-  glitchColor2?: string
-  disabled?: boolean
+interface GlitchTextProps {
+  children: React.ReactNode;
+  colorPrimary?: string;
+  colorSecondary?: string;
+  duration?: string;
+  glitchOffset?: string;
+  className?: string;
 }
 
-export const GlitchText: React.FC<GlitchTextProps> = ({
-  text,
+const GlitchText: React.FC<GlitchTextProps> = ({
+  children,
+  colorPrimary = "#ff0000",
+  colorSecondary = "#00ffff",
+  duration = "2s",
+  glitchOffset = "2px",
   className = "",
-  tag: Tag = "span",
-  glitchIntensity = "medium",
-  glitchColor1 = "rgba(255,0,0,0.7)",
-  glitchColor2 = "rgba(0,255,255,0.7)",
-  disabled = false,
 }) => {
-  const intensityClass = disabled ? "" : styles[`glitch-${glitchIntensity}`]
-  const combinedClassName = `${styles.glitchText} ${intensityClass} ${className}`.trim()
-
-  // Create a style object for custom colors
-  const customStyle = {
-    "--glitch-color-1": glitchColor1,
-    "--glitch-color-2": glitchColor2,
-  } as React.CSSProperties
-
   return (
-    <Tag className={combinedClassName} style={customStyle} data-text={text}>
-      {text}
-    </Tag>
-  )
-}
+    <span
+      className={`glitch-text ${className}`}
+      data-text={children}
+      style={{
+        "--color-primary": colorPrimary,
+        "--color-secondary": colorSecondary,
+        "--duration": duration,
+        "--glitch-offset": glitchOffset,
+      } as React.CSSProperties}
+    >
+      {children}
+    </span>
+  );
+};
+
+export default GlitchText;

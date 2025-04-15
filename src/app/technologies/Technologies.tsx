@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import techCarousel from "./techCarousel.module.css";
 import TechCard from "./TechCard";
 import { img } from "framer-motion/client";
+import GlitchText from "../components/glitchText";
 
 const slides = [
   {
@@ -113,7 +114,16 @@ export default function TechCarousel() {
       ref={carouselRef}
       className={`${techCarousel.carousel_container}`}
     >
-      <h2 className={`${techCarousel.section_title} rubik-font`}>Mi <br /> conocimiento</h2>
+      <h2 className={`${techCarousel.section_title} rubik-font`}>       <GlitchText 
+        colorPrimary="#4da8da" 
+        colorSecondary="#f700ff" 
+        duration="3s"
+        glitchOffset="0.5px"
+        className="rubik-font"
+      >
+        Mi conocimiento
+        
+      </GlitchText></h2>
      <h4 className={`${techCarousel.tech_title}`}>Tecnologías</h4>
      <p className={techCarousel.tech_subtitle}> Con que puedo desarrollar el siguiente proyecto</p>
       <Swiper
