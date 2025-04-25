@@ -6,6 +6,7 @@ import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
 import { ScrollAccordion } from './proyects/scroll-accordion';
 import GlitchText from './components/glitchText';
+import WorkExperience from './experience/WorkExperience';
 
 const HomePage = () => {
   const accordionItems = [
@@ -115,12 +116,21 @@ const HomePage = () => {
         colorSecondary="#f700ff" 
         duration="5s"
         glitchOffset="0.2px"
-        className="rubik-font main-feat experience-text"
+        className="rubik-font main-feat"
+      >
+        Mis proyectos
+      </GlitchText>
+    </h2>
+    <GlitchText 
+        colorPrimary="#4da8da" 
+        colorSecondary="#f700ff" 
+        duration="5s"
+        glitchOffset="0.2px"
+        className="rubik-font main-feat experience-text w-full text-end"
       >
         Mi experiencia
       </GlitchText>
-    </h2>
-    <ScrollAccordion items={accordionItems} />
+      <WorkExperience/>
 
   </> 
 };

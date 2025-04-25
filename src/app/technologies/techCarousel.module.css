@@ -6,13 +6,14 @@
     justify-items: space-around;
     align-items: center;
     align-content: center;
-    height: 80vh;
+    height: 100vh;
     position: relative;
     z-index: 1000;
     text-align: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
-    
+    margin-top: 5vh;
+    margin-bottom: 5vh;
    width: 99vw;
 }
 
@@ -21,7 +22,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; max-height: 50vh;
 }
 .slide{
     display: flex;
@@ -35,7 +36,8 @@
 
 }
 .tech_title{
-    color: var(--text-normal);
+    color: var(--accent-normal);
+    font-weight: 900;
     font-size: 2.2vw;
 
   }

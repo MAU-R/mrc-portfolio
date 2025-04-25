@@ -41,7 +41,8 @@
 }
 
 .title{
-    color: var(--text-light-active);
+  font-weight: 700;
+    color: var(--accent-normal);
     font-size: 3vw;
 }
 .subtitle{
