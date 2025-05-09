@@ -119,7 +119,7 @@ const HomePage = () => {
       >
         Mis proyectos
       </GlitchText>
-      <ScrollAccordion/>
+      
     </h2>
     <GlitchText 
         colorPrimary="#4da8da" 
