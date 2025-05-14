@@ -6,7 +6,7 @@ import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
 import GlitchText from './components/glitchText';
 import WorkExperience from './experience/WorkExperience';
-import ScrollAccordion from './proyects/ScrollAccordion'
+import {ScrollAccordion} from './proyects/ScrollAccordion'
 const HomePage = () => {
   const accordionItems = [
     {
@@ -119,7 +119,7 @@ const HomePage = () => {
       >
         Mis proyectos
       </GlitchText>
-      
+      <ScrollAccordion/>
     </h2>
     <GlitchText 
         colorPrimary="#4da8da" 
