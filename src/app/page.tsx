@@ -119,7 +119,9 @@ const HomePage = () => {
       >
         Mis proyectos
       </GlitchText>
-      <ScrollAccordion/>
+      <div className='max-h-[95vh] overflow-scroll'>
+      </div>
+
     </h2>
     <GlitchText 
         colorPrimary="#4da8da" 
