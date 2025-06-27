@@ -33,6 +33,28 @@
   --text-dark-active: #65676b;
   --text-darker: #4e5153;
 
+    --ginda-light: #f9e7f1;
+  --ginda-light-hover: #f6dbe9;
+  --ginda-light-active: #ecb6d2;
+  --ginda-normal: #c1126f;
+  --ginda-normal-hover: #ae1064;
+  --ginda-normal-active: #9a0e59;
+  --ginda-dark: #910e53;
+  --ginda-dark-hover: #740b43;
+  --ginda-dark-active: #570832;
+  --ginda-darker: #440627;
+
+    --red-light: #ffebf0;
+  --red-light-hover: #ffe1e8;
+  --red-light-active: #ffc1cf;
+  --red-normal: #ff3864;
+  --red-normal-hover: #e6325a;
+  --red-normal-active: #cc2d50;
+  --red-dark: #bf2a4b;
+  --red-dark-hover: #99223c;
+  --red-dark-active: #73192d;
+  --red-darker: #591423;
+
     /* Variables base */
     --base-unit: 4px; /* Tamaño base de la escala */
     --base-font-size: 16px; /* Tamaño de fuente base */
