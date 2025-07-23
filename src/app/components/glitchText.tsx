@@ -20,7 +20,7 @@ const GlitchText: React.FC<GlitchTextProps> = ({
 }) => {
   return (
     <span
-      className={`glitch-text ${className}`}
+      className={`${className}`}
       data-text={children}
       style={{
         "--color-primary": colorPrimary,

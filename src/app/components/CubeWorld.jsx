@@ -16,12 +16,12 @@ const CubeWorld = () => {
 
   const updateCameraY = () => {
     const width = window.innerHeight;
-    if (width > 900) {
-      setCameraY(3.5); // PC
-    } else if (width > 500) {
-      setCameraY(9.5); // Tablet
+    if (width > 1300) {
+      setCameraY(7.5); // PC
+    } else if (width > 900) {
+      setCameraY(3.3); // Tablet
     } else {
-      setCameraY(10.5); // Celular
+      setCameraY(9.5); // Celular
     }
   };
 
@@ -40,7 +40,7 @@ const CubeWorld = () => {
   return (
    
     <div className='main-canvas'>
-    <Canvas  camera={{ position: cameraPosition.toArray(), rotation:[-0.6,0,0]}}>
+    <Canvas  camera={{ position: cameraPosition.toArray(), rotation:[-0.55,0,0]}}>
       <ambientLight intensity={0.8} />
       <pointLight position={[1, 2, 1]} intensity={30} />
       <pointLight position={[1, 2, 8]} intensity={30} />

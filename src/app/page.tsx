@@ -6,105 +6,68 @@ import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
 import GlitchText from './components/glitchText';
 import WorkExperience from './experience/WorkExperience';
-import {ScrollAccordion} from './proyects/ScrollAccordion'
+
 const HomePage = () => {
-  const accordionItems = [
-    {
-      id: "light-penetration",
-      title: "Light penetration",
-      content:
-        "Red light (600-700 nm) and near-infrared light (800-1000 nm) penetrate the skin, reaching deeper layers of muscle and tissue. This light stimulates the mitochondria within cells, the energy-producing organelles, directly influencing the citric acid cycle.",
-    },
-    {
-      id: "cellular-stimulation",
-      title: "Cellular stimulation",
-      content:
-        "When light reaches the mitochondria, it stimulates the production of adenosine triphosphate (ATP), the primary energy carrier in cells. This boost in cellular energy enhances metabolic processes, increases oxygen consumption, and promotes tissue repair and regeneration.",
-    },
-    {
-      id: "boost-regeneration",
-      title: "Boost and regeneration",
-      content:
-        "The increased cellular energy and improved blood circulation lead to enhanced tissue repair and regeneration. This process reduces inflammation, accelerates wound healing, and promotes the formation of new blood vessels, resulting in improved skin texture and reduced signs of aging.",
-    },
-    {
-      id: "collagen-production",
-      title: "Collagen production",
-      content:
-        "Red light therapy stimulates fibroblasts, the cells responsible for producing collagen. Increased collagen production strengthens the skin's structure, improves elasticity, and reduces the appearance of fine lines and wrinkles, resulting in firmer, more youthful-looking skin.",
-    },
-    {
-      id: "anti-inflammatory",
-      title: "Anti-inflammatory effects",
-      content:
-        "Red and near-infrared light therapy has potent anti-inflammatory effects. It reduces the production of pro-inflammatory cytokines and increases anti-inflammatory mediators, helping to alleviate conditions characterized by chronic inflammation such as arthritis, muscle soreness, and certain skin conditions.",
-    },
-  ]
   return <>
+
     <CubeWorld/>
-    <section className='first-section'>
+    <section className='first-section relative'>
+
+    
       <div className="main">
-      <div className="header">
-      <h3>
-      <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#f700ff" 
-        duration="20s"
-        glitchOffset="0.1px"
-        className="rubik-font main-feat"
-      >
-        Desarrollo
-        Web
-      </GlitchText>
-      </h3>
-        <div className="header-links rubik-font">
-        <h4 className="header-link">
-          <a href="">     
-          <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#ff0000" 
-        duration="10s"
-        glitchOffset="2px"
-        className="rubik-font"
-      >
-        Proyectos
-      </GlitchText></a></h4>
-        <h4 className="header-link last"><a href="">
-        <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#ff0000" 
-        duration="10s"
-        glitchOffset="2px"
-        className="rubik-font"
-      >
-        Conocimientos
-      </GlitchText></a></h4>
-        <h4 className="header-link "><a href="">
-        <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#ff0000" 
-        duration="10s"
-        glitchOffset="2px"
-        className="rubik-font"
-      >
-        Contacto
-      </GlitchText>
-      </a></h4>
-        </div>
-      </div>
-      <h1>
-      <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#f700ff" 
-        duration="8s"
-        glitchOffset="0.5px"
-        className="rubik-font main-feat"
-      >
-        Mauricio Ramirez Castro
-      </GlitchText>
-      </h1>
-      </div>
-      <ManifestSection/>
+<div className="absolute inset-0 z-1 flex md:top-[2vh] gap-[10vh] md:gap-[11vh] flex-col items-center justify-start pointer-events-none">
+  <GlitchText 
+    colorPrimary="#ff3cac" 
+    colorSecondary="#ff3864" 
+    duration="2s"
+    glitchOffset="3px"
+    className="rubik-font main-feat glitch-text-main hidden! md:block! text-[19vw]"
+  >
+    Mauricio
+  </GlitchText>
+  <GlitchText 
+    colorPrimary="#ff3cac" 
+    colorSecondary="#ff3864" 
+    duration="2s"
+    glitchOffset="4px"
+    className="rubik-font main-feat glitch-text-main hidden! md:block! text-[19vw]"
+  >
+    Ramirez
+  </GlitchText>
+    <GlitchText 
+    colorPrimary="#ff3cac" 
+    colorSecondary="#ff3864" 
+    duration="2s"
+    glitchOffset="3px"
+    className="rubik-font main-feat glitch-text-main block md:hidden! text-[23vh]"
+  >
+    Mau
+  </GlitchText>
+  <GlitchText 
+    colorPrimary="#ff3cac" 
+    colorSecondary="#ff3864" 
+    duration="2s"
+    glitchOffset="4px"
+    className="rubik-font main-feat glitch-text-main block md:hidden! text-[23vh]"
+  >
+    Ram
+  </GlitchText>
+</div>
+   <div className="z-0 relative w-full h-[18vh] md:h-[30vh] flex items-start justify-start">
+  <div className="w-[60vw] h-[100vh] rounded-xl bg-(--neon-dark)/70 blur-[2000px] opacity-45 "></div>
+</div>
+  <div className="z-20 text-center">
+  <GlitchText 
+    colorPrimary="#cc2d50" 
+    colorSecondary="#4da8da" 
+    duration="10s"
+    glitchOffset="0.8px"
+    className="rubik-font text-[7.5vh] glitch-text-main spacing-b text-(--primary-light)!"
+  >
+    Software engineer
+  </GlitchText>
+</div>
+  </div>
     </section>
     <section className='canvas-spacing'></section>
     <section className='canvas-fade'></section>
