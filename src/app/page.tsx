@@ -6,14 +6,12 @@ import TechCarousel from './technologies/Technologies';
 import  ManifestSection  from './manifest/ManifestSection';
 import GlitchText from './components/glitchText';
 import WorkExperience from './experience/WorkExperience';
+import SnapScrollWrapper from './components/SnapScrollWrapper';
 
 const HomePage = () => {
   return <>
-
-    <CubeWorld/>
+    <SnapScrollWrapper>
     <section className='first-section relative'>
-
-    
       <div className="main">
 <div className="absolute inset-0 z-1 flex md:top-[2vh] gap-[10vh] md:gap-[11vh] flex-col items-center justify-start pointer-events-none">
   <GlitchText 
@@ -69,9 +67,15 @@ const HomePage = () => {
 </div>
   </div>
     </section>
-    <section className='canvas-spacing'></section>
-    <section className='canvas-fade'></section>
-    <TechCarousel/> 
+        <section className='canvas-spacing '></section>
+    <section className=' canvas-fade'></section>
+    <section className=" h-[100vh]"> <TechCarousel /> </section>
+    </SnapScrollWrapper>
+
+    <CubeWorld/>
+
+
+
     <h2 className=''>
       <GlitchText 
         colorPrimary="#4da8da" 

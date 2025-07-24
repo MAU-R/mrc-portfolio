@@ -9,7 +9,7 @@ const CubeWorld = () => {
 
   const [scroll, setScroll] = useState(0);
   const [cameraY, setCameraY] = useState(5); // Valor inicial para PC
-
+  const [cameraX, setCameraX] = useState(5); 
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
@@ -21,7 +21,7 @@ const CubeWorld = () => {
     } else if (width > 900) {
       setCameraY(3.3); // Tablet
     } else {
-      setCameraY(9.5); // Celular
+      setCameraY(9.3); // Celular
     }
   };
 

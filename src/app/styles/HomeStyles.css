@@ -305,3 +305,23 @@ section, div {
   margin-top: 5vh;
   translate:-4vw 0;
 }
+
+.scroll-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Cada sección se alinea al inicio del contenedor */
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-container {
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-end {
+  scroll-snap-align: end;
+}
