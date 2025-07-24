@@ -11,9 +11,12 @@ import SnapScrollWrapper from './components/SnapScrollWrapper';
 const HomePage = () => {
   return <>
     <SnapScrollWrapper>
+    <div className="absolute top-0 left-0 w-full h-[350vh] z-1 pointer-events-none">
+      <CubeWorld />
+    </div>
     <section className='first-section relative'>
       <div className="main">
-<div className="absolute inset-0 z-1 flex md:top-[2vh] gap-[10vh] md:gap-[11vh] flex-col items-center justify-start pointer-events-none">
+<div className="absolute inset-0 z-0 flex md:top-[2vh] gap-[10vh] md:gap-[11vh] flex-col items-center justify-start pointer-events-none">
   <GlitchText 
     colorPrimary="#ff3cac" 
     colorSecondary="#ff3864" 
@@ -67,39 +70,16 @@ const HomePage = () => {
 </div>
   </div>
     </section>
-        <section className='canvas-spacing '></section>
+    <section className='canvas-spacing '></section>
     <section className=' canvas-fade'></section>
-    <section className=" h-[100vh]"> <TechCarousel /> </section>
+    <section className=" h-[100vh] bg-amber-200">  </section>
     </SnapScrollWrapper>
 
-    <CubeWorld/>
+    <section>
+      
+    </section>
+    <TechCarousel />
 
-
-
-    <h2 className=''>
-      <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#f700ff" 
-        duration="5s"
-        glitchOffset="0.2px"
-        className="rubik-font main-feat"
-      >
-        Mis proyectos
-      </GlitchText>
-      <div className='max-h-[95vh] overflow-scroll'>
-      </div>
-
-    </h2>
-    <GlitchText 
-        colorPrimary="#4da8da" 
-        colorSecondary="#f700ff" 
-        duration="5s"
-        glitchOffset="0.2px"
-        className="rubik-font main-feat experience-text w-full text-end"
-      >
-        Mi experiencia
-      </GlitchText>
-      <WorkExperience/>
 
   </> 
 };

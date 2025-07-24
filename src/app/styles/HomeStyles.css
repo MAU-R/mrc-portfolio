@@ -120,7 +120,7 @@ section, div {
 }
 .canvas-spacing {
  width: 99vw;
- height: 155vh;
+ height: 160vh;
  background-color: var(--primary-darker);
  overflow-x: hidden;
 }

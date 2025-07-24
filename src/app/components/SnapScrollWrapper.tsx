@@ -23,7 +23,7 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
 
       gsap.to(container, {
         scrollTo: { y: target, autoKill: false },
-        duration: 2,
+        duration: 4,
         ease: 'power2.inOut',
         onComplete: () => {
           isThrottled = false;
@@ -87,7 +87,7 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
   }, []);
 
   return (
-    <div ref={containerRef} className="h-screen overflow-y-scroll scroll-container">
+    <div ref={containerRef} className="relative h-screen overflow-y-scroll scroll-container overflow-x-hidden" id="snap-scroll-container">
       <div ref={groupRef}>
         {children}
       </div>

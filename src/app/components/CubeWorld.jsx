@@ -10,9 +10,7 @@ const CubeWorld = () => {
   const [scroll, setScroll] = useState(0);
   const [cameraY, setCameraY] = useState(5); // Valor inicial para PC
   const [cameraX, setCameraX] = useState(5); 
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
+
 
   const updateCameraY = () => {
     const width = window.innerHeight;
@@ -25,13 +23,42 @@ const CubeWorld = () => {
     }
   };
 
+useEffect(() => {
+  const scrollContainer = document.getElementById('snap-scroll-container');
+
+  const handleScroll = () => {
+    if (scrollContainer) {
+      setScroll(scrollContainer.scrollTop);
+    }
+  };
+
+  const updateCameraY = () => {
+    const width = window.innerHeight;
+    if (width > 1300) {
+      setCameraY(7.5); // PC
+    } else if (width > 900) {
+      setCameraY(3.3); // Tablet
+    } else {
+      setCameraY(9.5); // Celular
+    }
+  };
+
+  scrollContainer?.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", updateCameraY);
+  updateCameraY(); // Inicial
+
+  return () => {
+    scrollContainer?.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", updateCameraY);
+  };
+}, []);
+
+
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", updateCameraY);
     updateCameraY(); // Llamar para definir el valor al inicio
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", updateCameraY);
     };
   }, []);
