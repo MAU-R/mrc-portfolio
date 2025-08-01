@@ -8,10 +8,14 @@ import WorkExperience from './experience/WorkExperience';
 import SnapScrollWrapper from './components/SnapScrollWrapper';
 
 import ManifestSection from './manifest/ManifestSection';
+import useInView from './manifest/useInView';
+
 
 
 
 const HomePage = () => {
+  const { ref: carouselRef, isVisible: showCarousel } = useInView<HTMLDivElement>({threshold:0.5});
+
 
   return <>
     <SnapScrollWrapper>
@@ -78,12 +82,15 @@ const HomePage = () => {
     <section className=' canvas-fade'></section>
     <ManifestSection/>
     </SnapScrollWrapper>
-
-    <section>
-      
+    <section 
+    className={`
+       h-[100vh] w-full flex flex-col justify-between`}>
+      <div
+        className=" self-center md:w-[50vw] h-[10vh] rounded-xl -translate-y-[2vh] opacity-100 blur-[100px] -z-0 md:self-end md:mr-[5vh]"
+        style={{ backgroundColor: 'var(--neon-dark)' }}
+      />
+      <TechCarousel />
     </section>
-    <TechCarousel />
-
 
   </> 
 };

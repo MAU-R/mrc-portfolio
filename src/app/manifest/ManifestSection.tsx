@@ -48,7 +48,7 @@ const ManifestSection = () => {
         <div
           ref={imageRef}
           className={`relative transform transition-all duration-1000 ease-out delay-1000 flex items-center justify-center w-9/10 h-3/4 md:h-3/4 bg-(--neon-normal)/30 rounded-xl border-2 border-(--neon-normal) ${
-            showImage ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
+            showImage ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0'
           }`}
         >
           <div
