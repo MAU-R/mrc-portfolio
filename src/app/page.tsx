@@ -2,13 +2,12 @@
 
 import React, { useRef } from 'react';
 import CubeWorld from './components/CubeWorld';
-import TechCarousel from './technologies/Technologies';
 import GlitchText from './components/glitchText';
 import WorkExperience from './experience/WorkExperience';
 import SnapScrollWrapper from './components/SnapScrollWrapper';
-
 import ManifestSection from './manifest/ManifestSection';
 import useInView from './manifest/useInView';
+import TechSection from './technologies/Technologies';
 
 
 
@@ -86,10 +85,10 @@ const HomePage = () => {
     className={`
        h-[100vh] w-full flex flex-col justify-between`}>
       <div
-        className=" self-center md:w-[50vw] h-[10vh] rounded-xl -translate-y-[2vh] opacity-100 blur-[100px] -z-0 md:self-end md:mr-[5vh]"
+        className=" self-center md:w-[50vw] h-[10vh] rounded-xl -translate-y-[15vh] opacity-100 blur-[100px] -z-0 md:self-end md:mr-[5vh]"
         style={{ backgroundColor: 'var(--neon-dark)' }}
       />
-      <TechCarousel />
+      <TechSection />
     </section>
 
   </> 

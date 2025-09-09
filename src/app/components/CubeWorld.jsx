@@ -8,60 +8,43 @@ import CubesField from './CubeField';
 const CubeWorld = () => {
 
   const [scroll, setScroll] = useState(0);
-  const [cameraY, setCameraY] = useState(5); // Valor inicial para PC
+  const [cameraY, setCameraY] = useState(3.5); // Valor inicial para PC
   const [cameraX, setCameraX] = useState(5); 
 
 
   const updateCameraY = () => {
-    const width = window.innerHeight;
+
+    const width = window.innerWidth;
+    console.log("Aqui entro o que?", width)
     if (width > 1300) {
-      setCameraY(7.5); // PC
+      setCameraY(3.5); // PC
     } else if (width > 900) {
-      setCameraY(3.3); // Tablet
+      setCameraY(2.9); // Tablet
     } else {
-      setCameraY(9.3); // Celular
+      setCameraY(2.3); // Celular
     }
   };
-
-useEffect(() => {
-  const scrollContainer = document.getElementById('snap-scroll-container');
-
-  const handleScroll = () => {
-    if (scrollContainer) {
-      setScroll(scrollContainer.scrollTop);
-    }
-  };
-
-  const updateCameraY = () => {
-    const width = window.innerHeight;
-    if (width > 1300) {
-      setCameraY(7.5); // PC
-    } else if (width > 900) {
-      setCameraY(3.3); // Tablet
-    } else {
-      setCameraY(9.5); // Celular
-    }
-  };
-
-  scrollContainer?.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", updateCameraY);
-  updateCameraY(); // Inicial
-
-  return () => {
-    scrollContainer?.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("resize", updateCameraY);
-  };
-}, []);
-
 
   useEffect(() => {
+    const scrollContainer = document.getElementById('snap-scroll-container');
+
+    const handleScroll = () => {
+      if (scrollContainer) {
+        setScroll(scrollContainer.scrollTop);
+      }
+    };
+
+
+    scrollContainer?.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", updateCameraY);
-    updateCameraY(); // Llamar para definir el valor al inicio
+    updateCameraY(); // Inicial
 
     return () => {
+      scrollContainer?.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", updateCameraY);
     };
   }, []);
+
 
   const cameraPosition = new THREE.Vector3(0, cameraY, 15);
   return (

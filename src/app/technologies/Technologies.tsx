@@ -1,10 +1,11 @@
 'use client'
 
-import useEmblaCarousel from 'embla-carousel-react'
-import TechCard from './TechCard'
+import TechCarousel from './TechCarousel'
+import { EmblaOptionsType } from 'embla-carousel'
+import './embla.css'
+import GlitchText from '../components/glitchText';
 
-export default function TechCarousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: true })
+export default function TechSection() {
 
   const slides = [
     {
@@ -64,22 +65,25 @@ export default function TechCarousel() {
       image: "/img/aws.png",
     },
   ];
+const options: EmblaOptionsType = { dragFree: true, loop: true,  align: 'center', }
+  return(
+    <section className='flex flex-col h-[80vh] py-12 justify-between'>
+        <GlitchText 
+    colorPrimary="#cc2d50" 
+    colorSecondary="#4da8da" 
+    duration="10s"
+    glitchOffset="0.8px"
+    className="rubik-font text-[4.5vh] glitch-text-main spacing-b text-(--primary-light)! ml-8 lg:ml-20 w-[90vw] md:w-[5vw]"
+  >
+    MI CONOCIMIENTO
+    </GlitchText>
 
-  return (
-    <div className="overflow-hidden" ref={emblaRef}>
-      <div className="flex gap-6">
-        {slides.map((slide, index) => (
-          <div key={index} className="flex-[0_0_100%] md:flex-[0_0_33.3333%]">
-            <TechCard
-              title={slide.title}
-              subtitle={slide.subtitle}
-              description={slide.description}
-              link={slide.link}
-              image={slide.image}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    <h3 className='text-3xl md:text-6xl text-(--accent-light) w-full text-center mb-5 md:mb-8'>Tecnologias</h3>
+    <p className='text-4xl md:text-7xl text-(--accent-light) w-full text-center mb-18 md:mb-24'>Con que puedo desarrollar el siguiente proyecto</p>
+    <TechCarousel slides={slides} options={options} />
+    </section>
+
   )
+
 }
+
