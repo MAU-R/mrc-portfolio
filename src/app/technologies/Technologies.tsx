@@ -78,8 +78,8 @@ const options: EmblaOptionsType = { dragFree: true, loop: true,  align: 'center'
     MI CONOCIMIENTO
     </GlitchText>
 
-    <h3 className='text-3xl md:text-6xl text-(--accent-light) w-full text-center mb-5 md:mb-8'>Tecnologias</h3>
-    <p className='text-4xl md:text-7xl text-(--accent-light) w-full text-center mb-18 md:mb-24'>Con que puedo desarrollar el siguiente proyecto</p>
+    <h3 className='text-2xl md:text-5xl text-(--accent-light) w-full text-center mb-5 md:mb-8'>Tecnologias</h3>
+    <p className='text-3xl md:text-6xl text-(--accent-light) w-full text-center mb-18 md:mb-24'>Con que puedo desarrollar el siguiente proyecto</p>
     <TechCarousel slides={slides} options={options} />
     </section>
 

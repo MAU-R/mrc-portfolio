@@ -29,11 +29,11 @@ export default function TechCard({
 
       <img src={image} alt="Paypal" className="w-[10vw] h-[10vw] mr-8" />
       <section className="flex flex-col">
-        <h2 className="text-4xl text-(--accent-normal) font-bold mb-auto">{title}</h2>
-        <h3 className="font-semibold text-2xl text-(--accent-light-hover) mb-4">
+        <h2 className="text-2xl md:text-4xl xl:text-5xl text-(--accent-normal) font-bold mb-auto">{title}</h2>
+        <h3 className="font-semibold text-2xl lg:text-3xl text-(--accent-light-hover) mb-4">
           {subtitle}
         </h3>
-        <p className="text-xl text-(--accent-light-active) mb-auto">{description}</p>
+        <p className="text-xl lg:text-2xl text-(--accent-light-active) mb-auto">{description}</p>
       </section>
     </div>
   );

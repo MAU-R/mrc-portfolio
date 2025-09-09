@@ -8,6 +8,7 @@ import SnapScrollWrapper from './components/SnapScrollWrapper';
 import ManifestSection from './manifest/ManifestSection';
 import useInView from './manifest/useInView';
 import TechSection from './technologies/Technologies';
+import WorkSection from './works/WorkSection';
 
 
 
@@ -90,6 +91,12 @@ const HomePage = () => {
       />
       <TechSection />
     </section>
+
+    {/* 
+    SECTION FOR THE WORK EXPERIENCE:
+    */}
+    <article className='h-[13vh] md:h-[18vh] xl:h-[25vh]'/>
+    <WorkSection/>
 
   </> 
 };
