@@ -71,11 +71,11 @@ const options: EmblaOptionsType = { dragFree: true, loop: true,  align: 'center'
         <GlitchText 
     colorPrimary="#cc2d50" 
     colorSecondary="#4da8da" 
-    duration="10s"
-    glitchOffset="0.8px"
-    className="rubik-font text-[4.5vh] glitch-text-main spacing-b text-(--primary-light)! ml-8 lg:ml-20 w-[90vw] md:w-[5vw]"
+    duration="1.8s"
+    glitchOffset="2.5px"
+    className="rubik-font text-[5.5vh] glitch-text-main spacing-b text-(--primary-light)! ml-8 lg:ml-20 w-[90vw] md:w-[24vw] lg:md-w-[20vw] xl:w-[18vw] self-start text-left"
   >
-    MI CONOCIMIENTO
+    MI Conocimiento
     </GlitchText>
 
     <h3 className='text-2xl md:text-5xl text-(--accent-light) w-full text-center mb-5 md:mb-8'>Tecnologias</h3>

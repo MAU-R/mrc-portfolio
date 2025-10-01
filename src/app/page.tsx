@@ -9,7 +9,7 @@ import ManifestSection from './manifest/ManifestSection';
 import useInView from './manifest/useInView';
 import TechSection from './technologies/Technologies';
 import WorkSection from './works/WorkSection';
-
+import {ProyectSection} from './proyects/ProyectSection';
 
 
 
@@ -97,7 +97,11 @@ const HomePage = () => {
     */}
     <article className='h-[13vh] md:h-[18vh] xl:h-[25vh]'/>
     <WorkSection/>
-
+    {/* 
+    SECTION FOR THE proyect EXPERIENCE:
+    */}
+    <article className='h-[13vh] md:h-[18vh] xl:h-[25vh]'/>
+    <ProyectSection/>
   </> 
 };
 
