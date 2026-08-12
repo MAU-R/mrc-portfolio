@@ -17,6 +17,7 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
     if (!container || !group) return;
 
     let touchStartY = 0;
+    let isTouchScrolling = false;
 
     const scrollTo = (target: number) => {
       isThrottled = true;
@@ -32,31 +33,55 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
     };
 
     const onWheel = (e: WheelEvent) => {
-      if (isThrottled) return;
-
       const currentScroll = container.scrollTop;
       const groupTop = group.offsetTop;
       const groupBottom = groupTop + group.offsetHeight;
 
-      // Scroll hacia abajo
+      // Dentro del Hero: permitir scroll nativo continuo
+      if (currentScroll >= groupTop && currentScroll < groupBottom - container.clientHeight) {
+        // Scroll nativo dentro del hero, no hacer nada especial
+        return;
+      }
+
+      // En los bordes: aplicar snap scroll si no está en throttle
+      if (isThrottled) return;
+
+      // Scroll hacia abajo desde antes del Hero
       if (e.deltaY > 0 && currentScroll < groupTop + 100) {
         e.preventDefault();
         scrollTo(groupBottom);
       }
 
-      // Scroll hacia arriba
-        if (e.deltaY < 0 && currentScroll >= groupBottom - container.clientHeight) {
+      // Scroll hacia arriba desde después del Hero
+      if (e.deltaY < 0 && currentScroll >= groupBottom - container.clientHeight) {
         e.preventDefault();
         scrollTo(groupTop);
-        }
+      }
     };
 
     const onTouchStart = (e: TouchEvent) => {
       touchStartY = e.touches[0].clientY;
+      isTouchScrolling = false;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const currentScroll = container.scrollTop;
+      const groupTop = group.offsetTop;
+      const groupBottom = groupTop + group.offsetHeight;
+
+      // Dentro del Hero: permitir scroll nativo continuo
+      if (currentScroll >= groupTop && currentScroll < groupBottom - container.clientHeight) {
+        isTouchScrolling = true;
+        return; // Permitir scroll nativo
+      }
     };
 
     const onTouchEnd = (e: TouchEvent) => {
-      if (isThrottled) return;
+      if (isThrottled || isTouchScrolling) {
+        isTouchScrolling = false;
+        return;
+      }
+      
       const deltaY = touchStartY - e.changedTouches[0].clientY;
 
       const currentScroll = container.scrollTop;
@@ -64,24 +89,27 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
       const groupBottom = groupTop + group.offsetHeight;
 
       // Swipe hacia arriba (scroll hacia abajo)
-      if (deltaY > 20 && currentScroll < groupTop + 100) {
+      if (deltaY > 50 && currentScroll < groupTop + 100) {
+        e.preventDefault();
         scrollTo(groupBottom);
       }
 
       // Swipe hacia abajo (scroll hacia arriba)
-        if (deltaY < -20 && currentScroll >= groupBottom - container.clientHeight) {
+      if (deltaY < -50 && currentScroll >= groupBottom - container.clientHeight) {
+        e.preventDefault();
         scrollTo(groupTop);
-        }
-
+      }
     };
 
     container.addEventListener('wheel', onWheel, { passive: false });
     container.addEventListener('touchstart', onTouchStart, { passive: true });
-    container.addEventListener('touchend', onTouchEnd, { passive: true });
+    container.addEventListener('touchmove', onTouchMove, { passive: true });
+    container.addEventListener('touchend', onTouchEnd, { passive: false });
 
     return () => {
       container.removeEventListener('wheel', onWheel);
       container.removeEventListener('touchstart', onTouchStart);
+      container.removeEventListener('touchmove', onTouchMove);
       container.removeEventListener('touchend', onTouchEnd);
     };
   }, []);

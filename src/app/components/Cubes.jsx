@@ -23,8 +23,15 @@ const Cube = ({ position, isActive, scroll, cameraPosition}) => {
       //console.log("Distancia en dx:: ",distancex)
 
 
-      if(scroll>(window.innerHeight*0.10))
-      ref.current.position.y -= (scroll-(window.innerHeight*0.05)) * 0.0009 * Math.exp(distance/3);
+      // Animación bidireccional basada en scroll
+      if(scroll>(window.innerHeight*0.10)) {
+        // Caída hacia abajo cuando hay scroll down
+        ref.current.position.y -= (scroll-(window.innerHeight*0.05)) * 0.0009 * Math.exp(distance/3);
+      } else {
+        // Restaurar posición original cuando scroll vuelve arriba
+        const targetY = position[1] + (isActive ? Math.sin((state.clock.getElapsedTime() + offset) % cycleDuration) * 0.3 : 0);
+        ref.current.position.y += (targetY - ref.current.position.y) * 0.1; // Interpolación suave
+      }
 
       ref.current.material.opacity = Math.max(1 - (scroll) * 0.0002, 0);
       ref.current.material.transparent = true;

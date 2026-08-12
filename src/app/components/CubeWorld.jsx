@@ -3,14 +3,11 @@ import { Canvas, useThree} from '@react-three/fiber';
 import * as THREE from 'three';
 import CubesField from './CubeField';
 
-
-
 const CubeWorld = () => {
 
   const [scroll, setScroll] = useState(0);
   const [cameraY, setCameraY] = useState(3.5); // Valor inicial para PC
   const [cameraX, setCameraX] = useState(5); 
-
 
   const updateCameraY = () => {
 
@@ -34,7 +31,6 @@ const CubeWorld = () => {
       }
     };
 
-
     scrollContainer?.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", updateCameraY);
     updateCameraY(); // Inicial
@@ -44,7 +40,6 @@ const CubeWorld = () => {
       window.removeEventListener("resize", updateCameraY);
     };
   }, []);
-
 
   const cameraPosition = new THREE.Vector3(0, cameraY, 15);
   return (

@@ -10,6 +10,8 @@ import useInView from './manifest/useInView';
 import TechSection from './technologies/Technologies';
 import WorkSection from './works/WorkSection';
 import {ProyectSection} from './proyects/ProyectSection';
+import ContactSection from './contact/ContactSection';
+import Footer from './footer/Footer';
 
 
 
@@ -102,6 +104,15 @@ const HomePage = () => {
     */}
     <article className='h-[13vh] md:h-[18vh] xl:h-[25vh]'/>
     <ProyectSection/>
+    
+    {/* 
+    SECTION FOR CONTACT:
+    */}
+    <article className='h-[13vh] md:h-[18vh] xl:h-[25vh]'/>
+    <ContactSection/>
+    
+    {/* FOOTER */}
+    <Footer/>
   </> 
 };
 

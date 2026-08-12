@@ -61,6 +61,4 @@ const CubesField = ({scroll, cameraPosition}) => {
   return <>{cubes}</>;
 };
 
-
-
 export default CubesField
