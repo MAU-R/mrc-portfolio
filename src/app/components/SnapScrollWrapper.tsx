@@ -37,25 +37,29 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
       const groupTop = group.offsetTop;
       const groupBottom = groupTop + group.offsetHeight;
 
-      // Dentro del Hero: permitir scroll nativo continuo
-      if (currentScroll >= groupTop && currentScroll < groupBottom - container.clientHeight) {
-        // Scroll nativo dentro del hero, no hacer nada especial
-        return;
-      }
-
-      // En los bordes: aplicar snap scroll si no está en throttle
+      // Verificar throttle primero
       if (isThrottled) return;
 
-      // Scroll hacia abajo desde antes del Hero
+      // Detectar situaciones de snap en los bordes (ANTES de permitir scroll nativo)
+      
+      // Snap hacia abajo: desde antes del Hero
       if (e.deltaY > 0 && currentScroll < groupTop + 100) {
         e.preventDefault();
         scrollTo(groupBottom);
+        return;
       }
 
-      // Scroll hacia arriba desde después del Hero
+      // Snap hacia arriba: desde después del Hero
       if (e.deltaY < 0 && currentScroll >= groupBottom - container.clientHeight) {
         e.preventDefault();
         scrollTo(groupTop);
+        return;
+      }
+
+      // Si no es situación de snap, permitir scroll nativo dentro del Hero
+      if (currentScroll >= groupTop && currentScroll < groupBottom - container.clientHeight) {
+        // Scroll nativo continuo dentro del hero
+        return;
       }
     };
 
@@ -88,16 +92,18 @@ export default function SnapScrollWrapper({ children }: { children: React.ReactN
       const groupTop = group.offsetTop;
       const groupBottom = groupTop + group.offsetHeight;
 
-      // Swipe hacia arriba (scroll hacia abajo)
+      // Swipe hacia arriba (scroll hacia abajo): desde antes del Hero
       if (deltaY > 50 && currentScroll < groupTop + 100) {
         e.preventDefault();
         scrollTo(groupBottom);
+        return;
       }
 
-      // Swipe hacia abajo (scroll hacia arriba)
+      // Swipe hacia abajo (scroll hacia arriba): desde después del Hero
       if (deltaY < -50 && currentScroll >= groupBottom - container.clientHeight) {
         e.preventDefault();
         scrollTo(groupTop);
+        return;
       }
     };
 
